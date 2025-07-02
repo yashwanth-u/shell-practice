@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PERSON1="Modi"
-PERSON2="Musk"
+PERSON2="Ambani"
 
 echo "$PERSON1:: Hi $PERSON2, H r u?"
 echo "$PERSON2:: I'm doing great, Trump! Just busy with SpaceX and Tesla."
