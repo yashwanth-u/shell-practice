@@ -8,7 +8,7 @@ N="/e[0m"
 
 if [ $USERID -ne 0 ]
 then
-    echo "$R ERROR:: Please run this script with root access $N"
+    echo -e "$R ERROR:: Please run this script with root access $N"
     exit 1 #give other than 0 upto 127
 else
     echo "You are running with root access"
@@ -17,9 +17,9 @@ fi
 VALIDATE() {
     if [ $1 -eq 0 ] # $1 = $? -eq 0 means success
     then
-        echo "Installing $2 is ... $G SUCCESS $N" # $2 is name of the package
+        echo -e "Installing $2 is ... $G SUCCESS $N" # $2 is name of the package
     else
-        echo "Installing $2 is ... $R FAILURE $N"
+        echo -e "Installing $2 is ... $R FAILURE $N"
         exit 1
     fi
 }  
@@ -30,7 +30,7 @@ then
     dnf install mysql -y
     VALIDATE $? "MYSQL"
 else
-    echo "Nothing to do MySQL... $Y already installed $N"
+    echo -e "Nothing to do MySQL... $Y already installed $N"
 fi
 
 dnf list installed python3
@@ -40,7 +40,7 @@ then
     dnf install python3 -y
     VALIDATE $? "python3"
 else
-    echo "Nothing to do python3... $Y already installed $N"
+    echo -e "Nothing to do python3... $Y already installed $N"
 fi
  
 dnf list installed nginx
@@ -50,5 +50,5 @@ then
     dnf install nginx -y
     VALIDATE $? "nginx"
 else
-    echo "Nothing to do nginx... $Y already installed $N"
+    echo -e "Nothing to do nginx... $Y already installed $N"
 fi
